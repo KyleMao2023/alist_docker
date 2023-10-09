@@ -26,6 +26,7 @@ COPY entrypoint.sh entrypoint.sh
 RUN chmod +x entrypoint.sh && chmod +x alist && chmod +x conf.yml 
 
 #监听端口
-EXPOSE 1234 
+EXPOSE 1234
+ENV PORT=5244
 
 ENTRYPOINT ["./entrypoint.sh"] 
