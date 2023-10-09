@@ -9,6 +9,7 @@ ARG VERSION=3.28.0
 #前端版本号
 ARG QVERSION=3.28.0
 
+ENV PORT=1234
 
 #下载项目后端文件
 RUN wget https://github.com/Xhofe/alist/releases/download/v${VERSION}/alist_v${VERSION}_linux_${CPU}.tar.gz
@@ -27,6 +28,6 @@ RUN chmod +x entrypoint.sh && chmod +x alist && chmod +x conf.yml
 
 #监听端口
 EXPOSE 1234
-ENV PORT=5244
+
 
 ENTRYPOINT ["./entrypoint.sh"] 
