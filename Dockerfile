@@ -3,11 +3,11 @@ FROM debian:latest
 RUN apt-get update && apt-get install wget -y
 
 #配置架构变量(386、amd64、arm、arm64)
-ARG CPU=arm64
+ARG CPU=amd64
 #后端版本号
-ARG VERSION=1.0.4
+ARG VERSION=3.28.0
 #前端版本号
-ARG QVERSION=1.0.4
+ARG QVERSION=3.28.0
 
 
 #下载项目后端文件
@@ -26,6 +26,6 @@ COPY entrypoint.sh entrypoint.sh
 RUN chmod +x entrypoint.sh && chmod +x alist && chmod +x conf.yml 
 
 #监听端口
-EXPOSE 5244 
+EXPOSE 1234 
 
 ENTRYPOINT ["./entrypoint.sh"] 
